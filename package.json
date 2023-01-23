@@ -1,0 +1,31 @@
+{
+  "name": "stevent-totp",
+  "version": "0.1.0",
+  "description": "Lightweight rfc-compliant TOTP authentication library based on `crypto`",
+  "repository": "https://github.com/stevent-team/totp",
+  "author": "Stevent Team",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.6.5",
+    "vitest": "^0.27.3"
+  }
+}

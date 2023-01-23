@@ -1,2 +1,2 @@
 # totp
-No-config TOTP authentication using `crypto`
+Lightweight rfc-compliant TOTP authentication library based on `crypto`

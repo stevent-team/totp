@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "1970-01-01T00:00:59Z",
+    "algorithm": "sha1",
+    "totp": "94287082"
+  },
+  {
+    "timestamp": "1970-01-01T00:00:59Z",
+    "algorithm": "sha256",
+    "totp": "46119246"
+  },
+  {
+    "timestamp": "1970-01-01T00:00:59Z",
+    "algorithm": "sha512",
+    "totp": "90693936"
+  },
+  {
+    "timestamp": "2005-03-18T01:58:29Z",
+    "algorithm": "sha1",
+    "totp": "07081804"
+  },
+  {
+    "timestamp": "2005-03-18T01:58:29Z",
+    "algorithm": "sha256",
+    "totp": "68084774"
+  },
+  {
+    "timestamp": "2005-03-18T01:58:29Z",
+    "algorithm": "sha512",
+    "totp": "25091201"
+  },
+  {
+    "timestamp": "2005-03-18T01:58:31Z",
+    "algorithm": "sha1",
+    "totp": "14050471"
+  },
+  {
+    "timestamp": "2005-03-18T01:58:31Z",
+    "algorithm": "sha256",
+    "totp": "67062674"
+  },
+  {
+    "timestamp": "2005-03-18T01:58:31Z",
+    "algorithm": "sha512",
+    "totp": "99943326"
+  },
+  {
+    "timestamp": "2009-02-13T23:31:30Z",
+    "algorithm": "sha1",
+    "totp": "89005924"
+  },
+  {
+    "timestamp": "2009-02-13T23:31:30Z",
+    "algorithm": "sha256",
+    "totp": "91819424"
+  },
+  {
+    "timestamp": "2009-02-13T23:31:30Z",
+    "algorithm": "sha512",
+    "totp": "93441116"
+  },
+  {
+    "timestamp": "2033-05-18T03:33:20Z",
+    "algorithm": "sha1",
+    "totp": "69279037"
+  },
+  {
+    "timestamp": "2033-05-18T03:33:20Z",
+    "algorithm": "sha256",
+    "totp": "90698825"
+  },
+  {
+    "timestamp": "2033-05-18T03:33:20Z",
+    "algorithm": "sha512",
+    "totp": "38618901"
+  },
+  {
+    "timestamp": "2603-10-11T11:33:20Z",
+    "algorithm": "sha1",
+    "totp": "65353130"
+  },
+  {
+    "timestamp": "2603-10-11T11:33:20Z",
+    "algorithm": "sha256",
+    "totp": "77737706"
+  },
+  {
+    "timestamp": "2603-10-11T11:33:20Z",
+    "algorithm": "sha512",
+    "totp": "47863826"
+  }
+]
