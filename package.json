@@ -11,18 +11,12 @@
   "author": "Stevent Team",
   "license": "MIT",
   "private": false,
-  "files": [
-    "dist"
-  ],
+  "files": [ "dist" ],
   "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/main.js"
-    }
-  },
+  "module": "./dist/main.mjs",
+  "typings": "./dist/main.d.ts",
   "scripts": {
-    "build": "tsc -d --emitDeclarationOnly --skipLibCheck --resolveJsonModule --outDir dist && esbuild lib/main.ts --platform=node --target=node18 --format=esm --bundle --external:./node_modules/* --outfile=dist/main.js",
+    "build": "tsup-node lib/main.ts",
     "test": "vitest",
     "lint": "eslint --ext .ts ./lib",
     "ci:release": "yarn build && yarn changeset publish"
@@ -31,8 +25,8 @@
     "@changesets/cli": "^2.26.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
-    "esbuild": "^0.17.4",
     "eslint": "^8.32.0",
+    "tsup": "^6.5.0",
     "typescript": "^4.9.4",
     "vitest": "^0.27.3"
   }
