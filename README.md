@@ -1,5 +1,6 @@
 # 🔑 totp
 Lightweight rfc-compliant TOTP authentication library for nodejs based on `crypto`
+
 [![npm version](https://img.shields.io/npm/v/@stevent-team/totp)](https://www.npmjs.com/package/@stevent-team/totp)
 [![minzip size](https://img.shields.io/bundlephobia/minzip/@stevent-team/totp)](https://bundlephobia.com/package/@stevent-team/totp)
 
