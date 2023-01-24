@@ -1,6 +1,6 @@
 {
   "name": "@stevent-team/totp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lightweight rfc-compliant TOTP authentication library based on `crypto`",
   "repository": "https://github.com/stevent-team/totp",
   "keywords": [

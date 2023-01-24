@@ -1,5 +1,11 @@
 # @stevent-team/totp
 
+## 0.0.2
+
+### Patch Changes
+
+- 070a83c: Fix type for outputDigits to allow null
+
 ## 0.0.1
 
 ### Patch Changes
