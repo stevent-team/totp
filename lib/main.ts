@@ -1,25 +1,14 @@
 import { createHmac } from 'crypto'
 
 /**
- * Generate a TOTP using an opinionated configuration
- * 
- * @note use `generateTotp` instead if you need a custom configuration
- */
-export default function totp(secret: string) {
-  return generateTotp({
-    secret,
-  })
-}
-
-/** 
  * Validate a provided TOTP
  * @see {TotpValidationOptions}
  */
 export const validateTotp = (totp: string, options: TotpValidationOptions) => {
   // Process options
   const genOptions = resolveGenerationOptions(options)
-  
-  // Resolve validation options 
+
+  // Resolve validation options
   const validWindowSize = options.validWindowSize ?? 1
 
   // Check this and previous periods (if applicable)
@@ -35,13 +24,13 @@ export const validateTotp = (totp: string, options: TotpValidationOptions) => {
 export const generateTotp = (options: TotpGenerationOptions) => {
   // Process options
   const { timestamp, period, algorithm, secret, periodOffset, outputDigits } = resolveGenerationOptions(options)
-  
+
   // Create truncated timestamp
   const time = Math.floor(timestamp / (period * 1000)) - periodOffset
-  
+
   // Generate padded string from timestamp
   const hexTime = time.toString(16).padStart(16, '0')
-  
+
   // Create buffers
   const timeBuffer = Buffer.from(hexTime, 'hex')
   const keyBuffer = hmacKeyFromSecret(secret, algorithm)
@@ -50,7 +39,7 @@ export const generateTotp = (options: TotpGenerationOptions) => {
   const hmac = createHmac(algorithm, keyBuffer)
     .update(timeBuffer)
     .digest()
-  
+
   // If not truncating, return hex encoding
   if (outputDigits === null)
     return hmac.toString('hex')
@@ -66,14 +55,14 @@ export const generateTotp = (options: TotpGenerationOptions) => {
     ((hmac[offset + 3] & 0xff))
 
   // Left pad code
-  const codeString = new Array(outputDigits + 1).join('0') + code.toString(10);
+  const codeString = new Array(outputDigits + 1).join('0') + code.toString(10)
   return codeString.substring(codeString.length - outputDigits)
 }
 
 const resolveGenerationOptions = (options: TotpGenerationOptions): Required<TotpGenerationOptions> => {
   // Check required
   if (!options.secret) throw new TotpError('`secret` option is required for totp processing')
-  
+
   // Resolve defeaults
   return {
     timestamp: Date.now(),
@@ -111,7 +100,7 @@ export interface TotpValidationOptions extends TotpGenerationOptions {
    *  may be generated at the very end of a period. Thus we should allow for totps
    *  to be accepted from previous periods. This option controls how many previous
    *  periods to check.
-   * 
+   *
    *  @note defaults to 1 period
    *  @note set to 0 to disallow TOTPS generated in previous periods
   */
