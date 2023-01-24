@@ -93,7 +93,7 @@ const hmacKeyFromSecret = (secret: string, algorithm: HmacAlgorithm) => {
     ).subarray(0, desiredKeySize)
 }
 
-export interface TotpValidationOptions extends TotpGenerationOptions {
+interface TotpValidationOptions extends TotpGenerationOptions {
   /** The number of periods that a valid totp may be in
    *
    *  the transmission delay when sending a totp across a network means a totp
@@ -104,10 +104,10 @@ export interface TotpValidationOptions extends TotpGenerationOptions {
    *  @note defaults to 1 period
    *  @note set to 0 to disallow TOTPS generated in previous periods
   */
-  validWindowSize: number
+  validWindowSize?: number
 }
 
-export interface TotpGenerationOptions {
+interface TotpGenerationOptions {
   /** The secret used to encode TOTP */
   secret: string
 
@@ -137,6 +137,7 @@ export interface TotpGenerationOptions {
   outputDigits?: number
 }
 
+export type TotpOptions = Partial<TotpGenerationOptions & TotpValidationOptions> & Required<Pick<TotpGenerationOptions, 'secret'>>
 export type HmacAlgorithm = 'sha512' | 'sha256' | 'sha1'
 
 /**
