@@ -18,10 +18,10 @@ yarn add @stevent-team/totp
 ## Examples
 
 ```ts
-import { generateTotp, validateTotp } from '@stevent-team/totp'
+import { generateTotp, validateTotp, type TotpOptions } from '@stevent-team/totp'
 
 // Configure
-const config = {
+const config: TotpOptions = {
   secret: process.env['MY_SECRET_KEY'], // REQUIRED
   timestamp: Date.now(),
   period: 30, // seconds
