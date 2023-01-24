@@ -22,7 +22,6 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc -d --emitDeclarationOnly --skipLibCheck --resolveJsonModule --outDir dist && esbuild lib/main.ts --platform=node --target=node18 --format=esm --bundle --external:./node_modules/* --outfile=dist/main.js",
     "test": "vitest",
     "lint": "eslint --ext .ts ./lib",
