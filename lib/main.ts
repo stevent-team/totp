@@ -134,7 +134,7 @@ interface TotpGenerationOptions {
   /** Number of decimal digits in the generated TOTP
    * @note defaults to 6
    * @note set to `null` for no truncation */
-  outputDigits?: number
+  outputDigits?: number | null
 }
 
 export type TotpOptions = Partial<TotpGenerationOptions & TotpValidationOptions> & Required<Pick<TotpGenerationOptions, 'secret'>>
